@@ -10,5 +10,6 @@ std::string calculate(const std::string& command, int first, int second) {
         return std::to_string(first-second);
     else if(command=="divide") 
         return std::to_string(first/second);
-    else return "Invalid data";
+    else 
+        return "Invalid data";
 }
