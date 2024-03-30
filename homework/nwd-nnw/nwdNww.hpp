@@ -32,5 +32,5 @@ int NWW(int lhs, int rhs) {
     if(lhs == 0 || rhs == 0) {
         return 0;
     }
-    else return std::abs((lhs * rhs) / GCD(lhs, rhs));
+    else return std::abs((lhs * rhs) / NWW(lhs, rhs));
 }
