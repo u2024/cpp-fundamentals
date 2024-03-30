@@ -21,10 +21,6 @@ int NWD(int lhs, int rhs) {
     }
     return std::abs(rhs);
     }
-    else if(lhs == 0 && rhs == 0)
-    {
-        return 1;
-    }
     return std::abs(lhs);
 }
 
