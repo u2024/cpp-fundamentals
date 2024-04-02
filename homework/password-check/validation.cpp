@@ -11,7 +11,7 @@ enum ErrorCode
     PasswordsDoNotMatch,
 };
 
-std::string getErrorMessage(ErrorCode result)
+auto getErrorMessage(ErrorCode result)
 {
     switch (result)
     {
