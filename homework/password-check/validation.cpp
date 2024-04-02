@@ -31,7 +31,8 @@ std::string getErrorMessage(ErrorCode result) {
 bool doPasswordsMatch(std::string password_1, std::string password_2) {
     if (password_1 == password_2) {
         return true;
-    } else return false;
+    } else
+        return false;
 }
 
 ErrorCode checkPasswordRules(std::string password) {
@@ -39,7 +40,7 @@ ErrorCode checkPasswordRules(std::string password) {
     if (password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    for(int i = 0; i < password.size();++i) {
+    for (int i = 0; i < password.size();++i) {
         if (isupper(password[i])) {
             a = true;
         }
@@ -65,5 +66,6 @@ ErrorCode checkPasswordRules(std::string password) {
 ErrorCode checkPassword(std::string password_1, std::string password_2) {
     if (doPasswordsMatch(password_1, password_2)) {
         return checkPasswordRules(password_1);
-    } else return ErrorCode::PasswordsDoNotMatch;
+    } else
+        return ErrorCode::PasswordsDoNotMatch;
 }
