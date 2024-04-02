@@ -1,17 +1,8 @@
 #include "validation.hpp"
 #include <cctype>
 #include <string>
-enum ErrorCode
-{
-    Ok,
-    PasswordNeedsAtLeastNineCharacters,
-    PasswordNeedsAtLeastOneNumber,
-    PasswordNeedsAtLeastOneSpecialCharacter,
-    PasswordNeedsAtLeastOneUppercaseLetter,
-    PasswordsDoNotMatch,
-};
 
-string getErrorMessage(ErrorCode result)
+std::string getErrorMessage(ErrorCode result)
 {
     switch (result)
     {
