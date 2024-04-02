@@ -11,7 +11,7 @@ enum ErrorCode
     PasswordsDoNotMatch,
 };
 
-string getErrorMessage(ErrorCode result)
+stdin getErrorMessage(ErrorCode result)
 {
     switch (result)
     {
