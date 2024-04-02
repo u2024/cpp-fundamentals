@@ -40,7 +40,7 @@ ErrorCode checkPasswordRules(std::string password) {
     if (password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    for (int i = 0; i < password.size();++i) {
+    for (int i = 0; i < password.size(); ++i) {
         if (isupper(password[i])) {
             a = true;
         }
