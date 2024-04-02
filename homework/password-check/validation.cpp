@@ -60,7 +60,7 @@ bool doPasswordsMatch(std::string password_1, std::string password_2)
     else return false;
 }
 
-auto checkPasswordRules(std::string password)
+ErrorCode checkPasswordRules(std::string password)
 {
     bool a=false, b=false, c=false;
     if(password.size()<9)
