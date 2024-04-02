@@ -97,7 +97,7 @@ auto checkPasswordRules(std::string password)
     return ErrorCode::Ok;
 }
 
-auto checkPassword(std::string password_1, std::string password_2)
+ErrorCode checkPassword(std::string password_1, std::string password_2)
 {
     if(doPasswordsMatch(password_1, password_2))
     {
