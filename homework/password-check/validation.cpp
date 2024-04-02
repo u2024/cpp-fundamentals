@@ -4,38 +4,25 @@
 
 std::string getErrorMessage(ErrorCode result)
 {
-    switch (result)
-    {
+    switch (result) {
     case 0:
-    {
         return "Ok";
         break;
-    }
     case 1:
-    {
         return "Password needs to have at least nine characters";
         break;
-    }
     case 2:
-    {
         return "Password needs to have at least one number";
         break;
-    }
     case 3:
-    {
         return "Password needs to have at least one special character";
         break;
-    }
     case 4:
-    {
         return "Password needs to have at least one uppercase letter";
         break;
-    }
     case 5:
-    {
         return "Passwords do not match";
         break;
-    }
     default:
         return "IDK";
         break;
@@ -44,8 +31,7 @@ std::string getErrorMessage(ErrorCode result)
 
 bool doPasswordsMatch(std::string password_1, std::string password_2)
 {
-    if(password_1==password_2)
-    {
+    if(password_1 == password_2) {
         return true;
     }
     else return false;
@@ -53,36 +39,28 @@ bool doPasswordsMatch(std::string password_1, std::string password_2)
 
 ErrorCode checkPasswordRules(std::string password)
 {
-    bool a=false, b=false, c=false;
-    if(password.size()<9)
-    {
+    bool a = false, b = false, c = false;
+    if(password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
-    for(int i=0;i<password.size();++i)
-    {
-        if(isupper(password[i]))
-        {
-            a=true;
+    for(int i = 0; i < password.size();++i) {
+        if(isupper(password[i])) {
+            a = true;
         }
-        if(!isalnum(password[i]))
-        {
-            b=true;
+        if(!isalnum(password[i])) {
+            b = true;
         }
-        if(isdigit(password[i]))
-        {
-            c=true;
+        if(isdigit(password[i])) {
+            c = true;
         }
     }
-    if(!a)
-    {
+    if(!a) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
-    if(!b)
-    {
+    if(!b) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    if(!c)
-    {
+    if(!c) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
     return ErrorCode::Ok;
