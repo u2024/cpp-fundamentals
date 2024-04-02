@@ -11,7 +11,7 @@ enum ErrorCode
     PasswordsDoNotMatch,
 };
 
-auto getErrorMessage(ErrorCode result)
+string getErrorMessage(ErrorCode result)
 {
     switch (result)
     {
