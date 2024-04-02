@@ -29,43 +29,41 @@ std::string getErrorMessage(ErrorCode result) {
 }
 
 bool doPasswordsMatch(std::string password_1, std::string password_2) {
-    if(password_1 == password_2) {
+    if (password_1 == password_2) {
         return true;
-    }
-    else return false;
+    } else return false;
 }
 
 ErrorCode checkPasswordRules(std::string password) {
     bool a = false, b = false, c = false;
-    if(password.size() < 9) {
+    if (password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
     }
     for(int i = 0; i < password.size();++i) {
-        if(isupper(password[i])) {
+        if (isupper(password[i])) {
             a = true;
         }
-        if(!isalnum(password[i])) {
+        if (!isalnum(password[i])) {
             b = true;
         }
-        if(isdigit(password[i])) {
+        if (isdigit(password[i])) {
             c = true;
         }
     }
-    if(!a) {
+    if (!a) {
         return ErrorCode::PasswordNeedsAtLeastOneUppercaseLetter;
     }
-    if(!b) {
+    if (!b) {
         return ErrorCode::PasswordNeedsAtLeastOneSpecialCharacter;
     }
-    if(!c) {
+    if (!c) {
         return ErrorCode::PasswordNeedsAtLeastOneNumber;
     }
     return ErrorCode::Ok;
 }
 
 ErrorCode checkPassword(std::string password_1, std::string password_2) {
-    if(doPasswordsMatch(password_1, password_2)) {
+    if (doPasswordsMatch(password_1, password_2)) {
         return checkPasswordRules(password_1);
-    }
-    else return ErrorCode::PasswordsDoNotMatch;
+    } else return ErrorCode::PasswordsDoNotMatch;
 }
