@@ -2,8 +2,7 @@
 #include <cctype>
 #include <string>
 
-std::string getErrorMessage(ErrorCode result)
-{
+std::string getErrorMessage(ErrorCode result) {
     switch (result) {
     case 0:
         return "Ok";
@@ -29,16 +28,14 @@ std::string getErrorMessage(ErrorCode result)
     }
 }
 
-bool doPasswordsMatch(std::string password_1, std::string password_2)
-{
+bool doPasswordsMatch(std::string password_1, std::string password_2) {
     if(password_1 == password_2) {
         return true;
     }
     else return false;
 }
 
-ErrorCode checkPasswordRules(std::string password)
-{
+ErrorCode checkPasswordRules(std::string password) {
     bool a = false, b = false, c = false;
     if(password.size() < 9) {
         return ErrorCode::PasswordNeedsAtLeastNineCharacters;
@@ -66,10 +63,8 @@ ErrorCode checkPasswordRules(std::string password)
     return ErrorCode::Ok;
 }
 
-ErrorCode checkPassword(std::string password_1, std::string password_2)
-{
-    if(doPasswordsMatch(password_1, password_2))
-    {
+ErrorCode checkPassword(std::string password_1, std::string password_2) {
+    if(doPasswordsMatch(password_1, password_2)) {
         return checkPasswordRules(password_1);
     }
     else return ErrorCode::PasswordsDoNotMatch;
