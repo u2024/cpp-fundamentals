@@ -1,6 +1,6 @@
 #include "validation.hpp"
 #include <cctype>
-
+#include <string>
 enum ErrorCode
 {
     Ok,
@@ -11,7 +11,7 @@ enum ErrorCode
     PasswordsDoNotMatch,
 };
 
-std::string getErrorMessage(ErrorCode result)
+string getErrorMessage(ErrorCode result)
 {
     switch (result)
     {
