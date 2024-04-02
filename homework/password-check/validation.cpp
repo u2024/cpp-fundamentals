@@ -49,9 +49,7 @@ bool doPasswordsMatch(std::string password_1, std::string password_2)
     }
     else return false;
 }
-//password[i]>='A' && password[i]<='Z'
-//(password[i]<='A' && password[i]>='Z') || (password[i]>='a' && password[i]<='z')
-//password[i]>='0' && password[i]<='9'
+
 auto checkPasswordRules(std::string password)
 {
     bool a=false, b=false, c=false;
