@@ -1,2 +1,16 @@
-// TODO: I'm empty :) Put enum and function headers here.
-// Don't forget the header guard - #pragma once
+#pragma once
+
+enum ErrorCode
+{
+    Ok,
+    PasswordNeedsAtLeastNineCharacters,
+    PasswordNeedsAtLeastOneNumber,
+    PasswordNeedsAtLeastOneSpecialCharacter,
+    PasswordNeedsAtLeastOneUppercaseLetter,
+    PasswordsDoNotMatch,
+};
+
+auto getErrorMessage(ErrorCode result);
+bool doPasswordsMatch(std::string password_1, std::string password_2);
+auto checkPasswordRules(std::string password);
+auto checkPassword(std::string password_1, std::string password_2);
