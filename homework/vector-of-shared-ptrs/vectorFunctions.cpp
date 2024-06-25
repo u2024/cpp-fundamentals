@@ -29,7 +29,7 @@ auto add10(std::vector<std::shared_ptr<int>> &vec)
     }
 }
 
-auto sub10(const std::shared_ptr<int> &ptr)
+auto sub10(const int* ptr)
 {
     *ptr -= 10;
 }
@@ -38,6 +38,6 @@ void sub10(std::vector<std::shared_ptr<int>> &vec)
 {
     for(auto & ptr : vec)
     {
-        sub10(ptr);
+        sub10(ptr.get());
     }
 }
