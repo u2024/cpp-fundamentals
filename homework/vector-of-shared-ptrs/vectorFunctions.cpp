@@ -25,13 +25,17 @@ auto add10(std::vector<std::shared_ptr<int>> &vec)
 {
     for(auto & ptr : vec)
     {
-        *ptr += 10;
+        if(ptr){
+            *ptr += 10;
+        }
     }
 }
 
 auto sub10(int* const ptr)
 {
+    if(ptr){
     *ptr -= 10;
+    }
 }
 
 void sub10(std::vector<std::shared_ptr<int>> &vec)
